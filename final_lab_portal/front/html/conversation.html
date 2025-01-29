@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversation</title>
+  <link rel="stylesheet" href="/front/css/styles.css">
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      resize: horizontal;
+      overflow: auto;
+    }
+    .message {
+      margin-top: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background-color: #e0e0e0;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 4px;
+      max-width: 100%;
+      cursor: pointer;
+    }
+    li.selected {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .message-left {
+      align-self: flex-start;
+      background-color: #bdd3ff;
+    }
+    .message-right {
+      align-self: flex-end;
+      background-color: #dcdcdc;
+    }
+    .chat-input {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 97%;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 97%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .contacts-list {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+    .contacts-list div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .contacts-list input[type="checkbox"] {
+      display: none;
+    }
+    .contacts-list label {
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #f4f4f9;
+    }
+    .contacts-list input[type="checkbox"]:checked + label {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .menu {
+      background-color: #007bff;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .menu button {
+      background-color: #fff;
+      color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 15px 15px 15px 15px;
+      margin: 10px 0;
+      font-size: 1.5em; /* Increase the font size */
+    }
+    .menu button:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+    <div class="menu">
+        <button id="goBack"><=</button>
+    </div>
+  <div class="container">
+    <h1>Create Chat</h1>
+    <form id="createChatForm">
+      <label for="chatName">Name</label>
+      <input type="text" id="chatName" required>
+      <label for="chatContactsSelect">Add one or more members</label>
+      <div id="chatContactsList" class="contacts-list"></div>
+      <p><button type="submit">Create Chat</button></p>
+    </form>
+    <div id="responseMessage" class="message"></div>
+    <h1>Your Group Chats</h1>
+    <ul id="groupChatsList"></ul>
+  </div>
+
+  <div class="container">
+    <h1 id="groupName"></h1>
+    <ul id="messagesList"></ul>
+    <input type="text" id="messageInput" class="chat-input" placeholder="Type a message...">
+    <button id="sendMessageButton">Send</button>
+  </div>
+
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+
+  <script src="/front/js/conversation.js"></script>
+  <script>
+    // Redirect to the chat page
+    document.getElementById("goBack").addEventListener("click", () => {
+      window.location.href = "/front/html/home_page.html";
+    });
+  </script>
+</body>
+</html>
