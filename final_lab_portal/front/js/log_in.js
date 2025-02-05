@@ -1,7 +1,7 @@
 const loginForm = document.getElementById("loginForm");
 const responseMessage = document.getElementById("responseMessage");
 
-const API_URL = "http://localhost:3000"; // Ensure this URL is correct
+const API_URL = "https://finallabportal.onrender.com"; // Ensure this URL is correct
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
