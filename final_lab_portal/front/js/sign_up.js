@@ -1,7 +1,7 @@
 const signupForm = document.getElementById("signupForm");
 const responseMessage = document.getElementById("responseMessage");
 
-const API_URL = "http://localhost:3000"; // Replace with your backend URL
+const API_URL = "https://finallabportal.onrender.com"; // Replace with your backend URL
 
 // Helper function to display messages
 function showMessage(message, isError = false) {
