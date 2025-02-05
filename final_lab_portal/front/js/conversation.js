@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000"; // Ensure this URL is correct
+const API_URL = "https://finallabportal.onrender.com"; // Ensure this URL is correct
 const socket = io(API_URL); // Initialize socket connection
 
 const urlParams = new URLSearchParams(window.location.search);
