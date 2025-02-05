@@ -10,7 +10,7 @@ const chatContactsList = document.getElementById("chatContactsList");
 const createChatForm = document.getElementById("createChatForm");
 const groupChatsList = document.getElementById("groupChatsList");
 
-const API_URL = "https://lab-portal.fly.dev"; // Ensure this URL is correct
+const API_URL = "https://finallabportal.onrender.com"; // Ensure this URL is correct
 
 const socket = io(API_URL); // Initialize socket connection
 
